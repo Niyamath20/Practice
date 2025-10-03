@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+   int num;
+   printf("Enter the number : ");
+   scanf("%d",&num);
+   int n;
+   printf("Enter divisor : ");
+   scanf("%d",&n);
+   int arr[20],i,rem=0,q=0;
+   for(int i=0;i<20;i++)
+   {
+       arr[i] = 0;
+       
+   }
+   while(num != 0)
+   {
+       q = num / n;
+       rem = num % n;
+       if(rem <= 9)
+       {
+            arr[i] = rem;
+            i++;
+       }
+       else
+       {
+           arr[i] = rem + 55;
+           i++;
+       }
+       num = q;
+   }
+   int count = 0;
+   for(int i=0;i<20;i++)
+   {
+       if(arr[i] != 0)
+       count++;
+   }
+   for(int i=count-1;i>=0;i--)
+   {
+       if(arr[i] < 9)
+       {
+           printf("%d",arr[i]);
+       }
+       else
+       {
+           printf("%c",(arr[i] + 55));
+       }
+   }
+   return 0;
+}
