@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    int s = num, c = 0, sum = 0;
+    while(num)
+    {
+        c++;
+        num /= 10;
+    }
+    //printf("%d",c);
+    if(c != 4)
+    {
+        printf("Invalid");
+        return 0;
+    }
+    num = s;
+    while(num)
+    {
+        int r = num % 10;
+        sum += r;
+        num /= 10;
+    }
+    if((sum % 3 == 0) || (sum % 5 == 0) || sum % 7 == 0)
+    {
+        printf("Lucky Number!!");
+    }
+    else
+    {
+        printf("Not a Lucky Number!!");
+    }
+    
+    return 0;
+}
